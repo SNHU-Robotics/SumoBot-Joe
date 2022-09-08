@@ -1,0 +1,6 @@
+[submodule "Hardware/BattleBot_Motherboard/Libraries/kenwoodfox-kicad-libraries"]
+	path = Hardware/BattleBot_Motherboard/Libraries/kenwoodfox-kicad-libraries
+	url = https://github.com/KenwoodFox/kenwoodfox-kicad-libraries.git
+[submodule "Hardware/BattleBot_Motherboard/Libraries/kicad-libraries"]
+	path = Hardware/BattleBot_Motherboard/Libraries/kicad-libraries
+	url = https://github.com/espressif/kicad-libraries.git
