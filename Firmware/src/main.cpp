@@ -1,5 +1,4 @@
-/* Orbital Percession
- * Concord Robotics
+/* SNHU Robotics
  *
  * Fight robots! Fight!
  */
@@ -7,17 +6,31 @@
 // Arduino Libs
 #include "Arduino.h"
 
-#define FLASH_LED 4
+// ESP Libs
+#include "esp_camera.h"
+#include <WiFi.h>
+
+// Pins
+#include "cameraInit.h"
+
+// Wifi settings
+const char *ssid = "BattleBot";
+const char *password = "iamnotacrook";
 
 void setup()
 {
     // Serial over USB
     Serial.begin(115200);
 
-    // initialize digital pin LED_BUILTIN as an output.
-    pinMode(FLASH_LED, OUTPUT);
+    // Wifi setup
+    WiFi.softAP(ssid, password);
 
-    delay(500);
+    IPAddress IP = WiFi.softAPIP();
+    Serial.print("AP IP address: ");
+    Serial.println(IP);
+
+    // Camera
+    camera_init();
 
     // Print MOTD
     Serial.println(MOTD);
